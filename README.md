@@ -1,4 +1,4 @@
-# Selenium-Web-Otomasyon-Proje-devi
+# Selenium-Web-Otomasyon-Proje-ödevi
 - Proje Java programlama dilinde yazılmalıdır.
 - Proje Maven projesi olarak yazılmalıdır.
 - Selenium, JUnit ve Log4J kütüphanelerini kullanmanız gerekmektedir.
@@ -6,7 +6,7 @@
 - Projenizin OOP (Object Oriented Programming) prensiplerine uygun yazılması
 gerekmektedir.
 - Page Object Pattern kullanmanız gerekmektedir.
-Selenium Web Otomasyon
+# Selenium Web Otomasyon
 - https://www.kitapyurdu.com/ sitesi açılır.
 - Ana sayfanın açıldığı kontrol edilir.
 - Ürün arama alanına “roman” yazılır ve klavyeden “enter” tuşuna basılır. (Ürün
