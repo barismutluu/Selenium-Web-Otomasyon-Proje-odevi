@@ -1,23 +1,35 @@
-# Selenium-Web-Otomasyon-Proje-ödevi
-- Proje Java programlama dilinde yazılmalıdır.
-- Proje Maven projesi olarak yazılmalıdır.
-- Selenium, JUnit ve Log4J kütüphanelerini kullanmanız gerekmektedir.
-- Projenizin GitHub üzerinden paylaşılması gerekmektedir
-- Projenizin OOP (Object Oriented Programming) prensiplerine uygun yazılması
-gerekmektedir.
-- Page Object Pattern kullanmanız gerekmektedir.
-# Selenium Web Otomasyon
-- https://www.kitapyurdu.com/ sitesi açılır.
-- Ana sayfanın açıldığı kontrol edilir.
-- Ürün arama alanına “roman” yazılır ve klavyeden “enter” tuşuna basılır. (Ürün
-aranına yazılacak roman kelimesi csv uzantılı dosyadan okunması gerekmektedir.)
-- Listelenen kitapların arasından rastgele bir kitap seçilir.
-- Sepete ekle butonuna basılır.
-- Sayfanın sağ üst kısmında bulunan sepet ikonundaki değer kontrol edilir.
-- Sepetim butonuna tıklanır.
-- Sepete git butonuna tıklanır.
-- Ürün miktarı “1” adet arttırılır.
-- Yenile butonuna basılır.
-- Sepetiniz güncelleniyor yazısının geldiği kontrol edilir.
-- Çarpı butonuna basılır.
-- Sepetin boş olduğu kontrol edilir.
+# Selenium Web Test Automation Framework
+
+This project is a **web test automation framework** developed using **Java and Selenium WebDriver**.  
+It automates a complete end-to-end user flow on the **Kitapyurdu** website and is designed to practice
+**test automation fundamentals, Page Object Model (POM), and clean framework structure**.
+
+---
+
+## 🔧 Technologies Used
+- Java
+- Selenium WebDriver
+- JUnit
+- Maven
+- Log4J
+- Page Object Model (POM)
+- CSV-based test data
+
+---
+
+## 🧪 Automated Test Scenarios
+The following test flow is automated:
+
+1. Open https://www.kitapyurdu.com  
+2. Verify home page is displayed  
+3. Search for a product using keyword from CSV file  
+4. Select a random product from results  
+5. Add product to cart  
+6. Verify cart count is updated  
+7. Navigate to cart page  
+8. Increase product quantity  
+9. Refresh the page  
+10. Verify cart update message  
+11. Remove product from cart  
+12. Verify cart is empty  
+
