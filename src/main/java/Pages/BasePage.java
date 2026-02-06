@@ -37,10 +37,6 @@ public class BasePage {
         element.sendKeys(text);
     }
 
-    protected boolean isDisplayed(By locator) {
-        return find(locator).isDisplayed();
-    }
-
     // COOKIE KABUL METHOD'U
     protected void acceptCookies(By cookieButtonLocator) {
         try {

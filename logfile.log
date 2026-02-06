@@ -1,0 +1,5 @@
+2026-02-07 01:02:08 INFO  [WebDriverManager] Using chromedriver 144.0.7559.133 (resolved driver for Chrome 144)
+2026-02-07 01:02:08 INFO  [WebDriverManager] Exporting webdriver.chrome.driver as C:\Users\baris\.cache\selenium\chromedriver\win64\144.0.7559.133\chromedriver.exe
+2026-02-07 01:02:18 INFO  [Log] searchRomanTest() PASSED
+2026-02-07 01:02:20 INFO  [Log] chooseRomanTest() PASSED
+2026-02-07 01:02:34 INFO  [Log] cartOperationsTest() PASSED
