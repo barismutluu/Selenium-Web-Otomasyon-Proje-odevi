@@ -1,26 +1,21 @@
 package Logger;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Log {
 
-    static Logger logger = Logger.getLogger(Log.class);
+    private static final Logger logger = LogManager.getLogger(Log.class);
 
-    public Log(){
-        DOMConfigurator.configure("log4j.xml");
-    }
-
-    public void info(String message){
+    public void info(String message) {
         logger.info(message);
     }
 
-    public void warn(String message){
+    public void warn(String message) {
         logger.warn(message);
     }
 
-    public void error(String message){
+    public void error(String message) {
         logger.error(message);
     }
-
 }

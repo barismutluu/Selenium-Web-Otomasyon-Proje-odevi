@@ -41,7 +41,7 @@ public class BasePage {
         return find(locator).isDisplayed();
     }
 
-    // 🔥 COOKIE KABUL METHOD'U
+    // COOKIE KABUL METHOD'U
     protected void acceptCookies(By cookieButtonLocator) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(cookieButtonLocator)).click();

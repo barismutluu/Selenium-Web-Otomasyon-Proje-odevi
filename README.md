@@ -1,10 +1,12 @@
 # Selenium Web Test Automation Framework
 
 This project is a **web test automation framework** developed using **Java and Selenium WebDriver**.  
-It automates a complete **end-to-end user flow on the Kitapyurdu website** and is designed to practice:
+It automates a complete **end-to-end (E2E) user flow on the Kitapyurdu website** and is designed to practice:
 
 - Test automation fundamentals
 - Page Object Model (POM) design pattern
+- JUnit 5 test lifecycle and ordering
+- Logging test results with Log4j2
 - Clean and maintainable framework structure
 
 ---
@@ -15,93 +17,106 @@ It automates a complete **end-to-end user flow on the Kitapyurdu website** and i
 - **Selenium WebDriver**
 - **JUnit 5 (Jupiter)**
 - **Maven**
+- **WebDriverManager**
+- **Log4j2**
 - **Page Object Model (POM)**
-- **Explicit Wait (WebDriverWait)**
+- **Explicit & Implicit Waits**
 - **Cookie consent handling**
-- **CSV-based test data (optional / extendable)**
 
 ---
 
 ## 📁 Project Structure
 
 ```
-src
-├── main
-│   └── java
-│       └── Pages
-│           ├── BasePage.java
-│           ├── HomePage.java
-│           ├── RomanPage.java
-│           └── CartPage.java
-└── test
-    └── java
-        ├── BaseTest.java
-        └── KitapyurduTest.java
-```
 
+src/
+├── main
+│ └── java
+│ ├── Logger
+│ │ └── Log.java
+│ └── Pages
+│ ├── BasePage.java
+│ ├── HomePage.java
+│ ├── RomanPage.java
+│ └── CartPage.java
+│
+├── test
+│ └── java
+│ ├── testlogger
+│ │ └── TestResultLogger.java
+│ ├── BaseTest.java
+│ └── KitapyurduTest.java
+│
+└── resources
+└── log4j2.xml
+```
 ---
 
-## 🧪 Automated Test Scenarios
+## 🧪 Automated Test Scenario (E2E)
 
-The following **end-to-end test flow** is automated:
+The following end-to-end test flow is automated:
 
 1. Open **https://www.kitapyurdu.com**
 2. Accept cookie consent automatically
-3. Verify home page is displayed
+3. Verify home page is opened
 4. Search for a product (e.g. *roman*)
 5. Select a product from search results
 6. Add product to cart
 7. Verify cart count is updated
 8. Navigate to cart page
 9. Increase product quantity
-10. Verify cart update message
+10. Verify cart update
 11. Remove product from cart
-12. Verify product is removed from cart
+12. Verify cart is empty
 
 ---
 
 ## 🧱 Framework Design
 
 - **Page Object Model (POM)** is used to separate test logic from page interactions
-- All reusable Selenium methods are centralized in `BasePage`
-- Cookie consent popup is handled automatically in `BasePage`
-- Tests are ordered using `@TestMethodOrder`
-- Assertions are handled using **JUnit 5 Assertions**
+- All reusable Selenium actions are centralized in `BasePage`
+- Cookie consent popup is handled automatically
+- Explicit waits are used for stable element interactions
+- Tests are executed in order using `@TestMethodOrder`
 
 ---
 
-## ▶️ How to Run Tests
+## 🧪 Test Layer
 
-1. Make sure **Java 18** and **Maven** are installed
-2. Open the project in IntelliJ IDEA
-3. Run the test class:
+### BaseTest
+- WebDriver setup using **WebDriverManager**
+- Chrome browser configuration
+- Site availability verification
+- Test lifecycle management (`@BeforeAll`, `@AfterAll`)
+- Test result logging via JUnit 5 Extension
 
-```
-KitapyurduTest.java
-```
-
-or via Maven:
-
-```
-mvn test
-```
+### KitapyurduTest
+- Ordered E2E test execution
+- Assertions using **JUnit 5**
+- Real user scenario simulation
 
 ---
 
-## ✅ Key Features
+## 📝 Logging
 
-- Clean and readable test code
-- Stable element handling with Explicit Waits
-- Centralized cookie consent handling
-- Easy to extend with new test scenarios
-- Beginner-friendly Selenium + POM framework
+- **Log4j2** is used for centralized logging
+- Test results are captured using a custom **JUnit 5 TestWatcher**
+    - PASSED tests → INFO log
+    - FAILED tests → ERROR log with failure reason
 
 ---
 
-## 🚀 Future Improvements (Optional)
+## 🚀 Future Improvements
 
 - Screenshot on test failure
-- Test reports (Allure / Extent)
+- Test reporting (Allure / Extent)
 - Headless browser support
 - Retry mechanism for flaky tests
-- Data-driven testing with CSV / Excel
+- Data-driven testing
+
+---
+
+## 👤 Author
+
+**Barış Mutlu**  
+Junior Software Test Automation Engineer

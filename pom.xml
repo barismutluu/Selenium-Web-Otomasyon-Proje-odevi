@@ -11,7 +11,6 @@
   <version>1.0-SNAPSHOT</version>
 
   <properties>
-    <!-- Güvenli ve stabil -->
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,11 +25,27 @@
       <version>4.18.1</version>
     </dependency>
 
-    <!-- Log4j (Eski proje uyumluluğu için) -->
+
+    <!-- Log4j  -->
     <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>1.2.17</version>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.25.3</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <!-- SLF4J -> Log4j2 bridge -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j2-impl</artifactId>
+      <version>2.25.3</version>
+    </dependency>
+
+    <!-- Log4j API  -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>2.25.3</version>
     </dependency>
 
     <!-- WebDriverManager -->
@@ -60,7 +75,7 @@
   <build>
     <plugins>
 
-      <!-- Maven Surefire (JUnit 5 için şart) -->
+      <!-- Maven Surefire -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
